@@ -27,7 +27,7 @@ const closeIssue = id => {
   const currentIssue = issues.find(issue => issue.id === id);
   // currentIssue.status = 'Closed';
   localStorage.setItem('issues', JSON.stringify(issues));
-  fetchIssues();
+  
 }
 
 const deleteIssue = id => {
@@ -35,6 +35,7 @@ const deleteIssue = id => {
   // const remainingIssues = issues.filter( issue.id !== id )
   const remainingIssues = issues.filter( issue => issue.id === id )
   localStorage.setItem('issues', JSON.stringify(remainingIssues));
+  fetchIssues();
 }
 
 const fetchIssues = () => {
